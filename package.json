@@ -1,5 +1,5 @@
 {
-  "name": "ubcclasses",
+  "name": "FechUBCClasses",
   "version": "0.0.1",
   "description": "Scrapes class info from UBC.",
   "main": "index.js",
@@ -10,8 +10,7 @@
   "author": "qimingfang",
   "license": "ISC",
   "dependencies": {
-    "cheerio": "^0.19.0",
-    "popsicle": "^1.4.0"
+    "cheerio": "^0.19.0"
   },
   "devDependencies": {
     "babel-core": "^6.3.15",

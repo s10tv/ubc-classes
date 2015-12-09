@@ -1,9 +1,8 @@
 "use strict";
 
-let popsicle = require('popsicle');
-
 class Scraper {
 
+  /*
   constructor(jsessionId, csjdk6) {
     this.jsessionId = jsessionId,
     this.csjdk6 = csjdk6;
@@ -16,6 +15,7 @@ class Scraper {
 
     this.request = popsicle.defaults({ options: { jar: this.jar } });
   }
+  */
 
   /**
    * @return a promise returning list of class objects denoting
@@ -30,11 +30,8 @@ class Scraper {
    *  credits: Number
    * }
    */
-  scrape() {
-    this.request(this.url)
-    .then(response => {
-      console.log(response.body);
-    })
+  static scrape() {
+    console.log('scraping');
   }
 
   __fetchData() {
