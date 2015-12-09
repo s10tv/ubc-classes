@@ -1,5 +1,5 @@
 {
-  "name": "UbcClasses",
+  "name": "ubcclasses",
   "version": "0.0.1",
   "description": "Scrapes class info from UBC.",
   "main": "index.js",
