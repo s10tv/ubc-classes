@@ -2,19 +2,30 @@ var grunt = require('grunt');
 
 grunt.loadNpmTasks('grunt-contrib-clean');
 
-require("load-grunt-tasks")(grunt); // npm install --save-dev load-grunt-tasks
+require('load-grunt-tasks')(grunt); // npm install --save-dev load-grunt-tasks
 
 grunt.initConfig({
-  "babel": {
+  clean: ["dist"],
+  babel: {
     options: {
       sourceMap: true
     },
     dist: {
-      files: {
-        "dist/index.js": "index.js"
-      }
+      files: [{
+        expand: true,
+        cwd: 'src',
+        src: ['**/*.js'],
+        dest: 'dist/src',
+        ext: '.js'
+      }, {
+        expand: true,
+        cwd: 'tests',
+        src: ['**/*.js'],
+        dest: 'dist/tests',
+        ext: '.js'
+      }]
     }
   }
 });
 
-grunt.registerTask("default", ["babel"]);
+grunt.registerTask('default', ['babel']);

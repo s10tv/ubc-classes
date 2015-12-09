@@ -4,17 +4,23 @@
   "description": "Scrapes class info from UBC.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "pretest": "grunt clean && grunt",
+    "test": "mocha --recursive dist/tests",
     "start": "grunt && node dist/index.js"
   },
+  "repository": "https://github.com/s10tv/ubc-classes",
   "author": "qimingfang",
   "license": "ISC",
   "dependencies": {
-    "cheerio": "^0.19.0"
+    "cheerio": "^0.19.0",
+    "query-string": "^3.0.0"
   },
   "devDependencies": {
     "babel-core": "^6.3.15",
+    "chai": "^3.4.1",
+    "expect.js": "^0.3.1",
     "grunt-babel": "^6.0.0",
-    "load-grunt-tasks": "^3.3.0"
+    "load-grunt-tasks": "^3.3.0",
+    "mocha": "^2.3.4"
   }
 }
