@@ -1,6 +1,6 @@
 "use strict";
 
-let cheerio = require('cheerio');
+let cheerio = require('./cheerio');
 let queryString = require('query-string');
 
 class Scraper {
