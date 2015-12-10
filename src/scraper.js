@@ -10,6 +10,7 @@ class Scraper {
    *
    * {
    *  dept: string // i.e. 'PSYCH'
+   *  link: string // the link to the course (for more info)
    *  course: string // i.e. '101'
    *  section: string // i.e. '901'
    *  term : string (for now) // i.e. '1'
@@ -29,8 +30,8 @@ class Scraper {
     $('.section-summary tbody tr').each(function(index, row) {
       let cells = $(this).children('td');
 
-      let classLink = cells.eq(2).children().first().attr('href');
-      let parsed = queryString.parse(classLink);
+      let link = cells.eq(2).children().first().attr('href');
+      let parsed = queryString.parse(link);
 
       let type = cells.eq(3).text().trim();
       let term = cells.eq(4).text().trim();
@@ -40,6 +41,7 @@ class Scraper {
       let credits = cells.eq(10).text().trim();
 
       classes.push({
+        link,
         dept: parsed.dept,
         course: parsed.course,
         section: parsed.section,
